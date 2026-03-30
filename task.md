@@ -1,0 +1,26 @@
+# Task Checklist: Konaseema Pickle E-Commerce
+
+- [x] Initialize Project Structure
+  - [x] Create Next.js `frontend` app (Vanilla CSS, App Router)
+  - [x] Create Node.js `backend` app (Express, MongoDB)
+- [x] Setup Backend (Express, MongoDB)
+  - [x] Install dependencies (mongoose, express, cors, dotenv)
+  - [x] Define Models (User, Product, Order)
+  - [x] Create API Routes (Products CRUD, Orders, Auth)
+- [x] Setup Frontend Architecture (Next.js)
+  - [x] Organize `public` folder with Konaseema illustrations and product images
+  - [x] Set up Global CSS with Konaseema theme (earthy tones: red, yellow, green)
+  - [x] Create layout and navigation (Header, Footer, Mobile Menu, Sticky Cart)
+- [x] Build Frontend Customer Pages
+  - [x] Home Page (Hero, Categories, Best Sellers, Process, Testimonials)
+  - [x] Shop Page (Grid of products, filtering)
+  - [x] Product Detail Page (Variants, Description, Add to cart)
+  - [x] Cart & Checkout Flow (Guest checkout, Address form, Payment options)
+  - [x] Additional simple pages (About, Contact)
+- [x] Build Admin Panel (`/admin`)
+  - [x] Simple Dashboard Layout
+  - [x] Product Management (Add, Edit, Stock Toggle, Image Upload via URL)
+  - [x] Order Management (View list, change status)
+- [x] Integration & Verification
+  - [x] Connect Next.js to Express API
+  - [x] Manual end-to-end testing
