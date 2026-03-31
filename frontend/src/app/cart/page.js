@@ -20,12 +20,12 @@ export default function CartPage() {
     <div style={{ padding: '60px 0', minHeight: '80vh' }}>
       <div className="container">
         <h1 className="section-title">Your Cart</h1>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 350px', gap: '40px' }}>
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_350px] gap-8 lg:gap-10">
           
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             {cart.map((item, idx) => (
-              <div key={`${item.product._id}-${idx}`} style={{ display: 'flex', gap: '20px', padding: '20px', background: 'white', borderRadius: '12px', boxShadow: 'var(--shadow-sm)' }}>
-                <img src={item.product.image || '/images/1.png'} alt={item.product.name} style={{ width: '100px', height: '100px', objectFit: 'cover', borderRadius: '8px' }} />
+              <div key={`${item.product._id}-${idx}`} className="flex gap-3 sm:gap-5 p-3 sm:p-5 bg-white rounded-xl shadow-sm">
+                <img src={item.product.image || '/images/1.png'} alt={item.product.name} className="w-20 h-20 sm:w-24 sm:h-24 object-cover rounded-lg shrink-0" />
                 <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <div>

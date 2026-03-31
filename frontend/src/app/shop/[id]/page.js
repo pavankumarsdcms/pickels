@@ -75,7 +75,7 @@ export default function ProductDetail({ params: paramsPromise }) {
         <Link href="/shop" style={{ color: '#888', textDecoration: 'underline', marginBottom: '20px', display: 'inline-block' }}>
           &larr; Back to Shop
         </Link>
-        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(300px, 1fr) minmax(300px, 1fr)', gap: '50px', alignItems: 'flex-start' }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           
           <div style={{ position: 'relative', borderRadius: '12px', overflow: 'hidden', boxShadow: 'var(--shadow-md)', background: '#fff', width: '100%', aspectRatio: '1' }}>
             <Image src={product.image || '/images/32.png'} alt={product.name} fill style={{ objectFit: 'cover' }} />
@@ -93,7 +93,7 @@ export default function ProductDetail({ params: paramsPromise }) {
             
             <div style={{ marginBottom: '30px' }}>
               <strong style={{ display: 'block', marginBottom: '10px' }}>Select Weight:</strong>
-              <div style={{ display: 'flex', gap: '15px' }}>
+              <div className="flex flex-wrap gap-3">
                 {weightOptions.map(option => (
                   <button 
                     key={option.label}
@@ -130,7 +130,7 @@ export default function ProductDetail({ params: paramsPromise }) {
         {/* Reviews Section */}
         <div style={{ marginTop: '60px', borderTop: '1px solid #eee', paddingTop: '40px' }}>
           <h2 style={{ fontSize: '1.8rem', marginBottom: '20px', color: 'var(--color-primary)' }}>Customer Reviews</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div style={{ background: '#f9f9f9', padding: '20px', borderRadius: '8px' }}>
               <div style={{ color: '#f39c12', marginBottom: '10px' }}>⭐⭐⭐⭐⭐</div>
               <h4 style={{ marginBottom: '5px' }}>&quot;Absolutely Delicious!&quot;</h4>
@@ -158,7 +158,7 @@ export default function ProductDetail({ params: paramsPromise }) {
         {similarProducts.length > 0 && (
           <div style={{ marginTop: '60px', borderTop: '1px solid #eee', paddingTop: '40px' }}>
             <h2 style={{ fontSize: '1.8rem', marginBottom: '30px' }}>Similar Products You Might Like</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '30px' }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {similarProducts.map((simProd) => (
                 <Link href={`/shop/${simProd._id}`} key={simProd._id} style={{ display: 'block', borderRadius: '12px', overflow: 'hidden', boxShadow: 'var(--shadow-sm)', textDecoration: 'none', color: 'inherit', background: '#fff' }}>
                   <div style={{ position: 'relative', width: '100%', height: '220px' }}>
