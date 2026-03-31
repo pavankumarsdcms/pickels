@@ -55,14 +55,14 @@ export default function AdminDashboard() {
       ) : (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
           {orders.map(order => (
-            <div key={order._id} style={{ background: 'white', borderRadius: '12px', padding: '30px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', border: '1px solid #eee' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px', borderBottom: '1px solid #eee', paddingBottom: '15px' }}>
+            <div key={order._id} className="bg-white rounded-xl p-4 md:p-8 shadow-sm border border-gray-100">
+              <div className="flex flex-col md:flex-row justify-between gap-4 mb-5 border-b border-gray-200 pb-4">
                 <div>
                   <span style={{ color: '#888', fontSize: '0.9rem' }}>Order #{order._id.substring(18, 24).toUpperCase()}</span>
                   <h3 style={{ fontSize: '1.4rem', margin: '5px 0' }}>{order.shippingAddress?.name}</h3>
                   <p style={{ color: '#666', fontSize: '0.9rem' }}>{order.shippingAddress?.phone} | {order.shippingAddress?.email}</p>
                 </div>
-                <div style={{ textAlign: 'right' }}>
+                <div className="md:text-right mt-2 md:mt-0 flex flex-row md:flex-col justify-between items-center md:items-end">
                   <div style={{ 
                     padding: '8px 16px', 
                     borderRadius: '50px', 
@@ -74,11 +74,11 @@ export default function AdminDashboard() {
                   }}>
                     {order.orderStatus}
                   </div>
-                  <p style={{ marginTop: '10px', fontSize: '1.2rem', fontWeight: 'bold', color: 'var(--color-primary)' }}>₹{order.totalPrice}</p>
+                  <p className="mt-0 md:mt-2 text-xl font-bold text-primary">₹{order.totalPrice}</p>
                 </div>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'minmax(200px, 1fr) 1.5fr', gap: '40px' }}>
+              <div className="grid grid-cols-1 md:grid-cols-[minmax(200px,1fr)_1.5fr] gap-6 md:gap-10">
                 <div>
                   <h4 style={{ color: '#888', fontSize: '0.8rem', textTransform: 'uppercase', marginBottom: '10px' }}>Order Items</h4>
                   {order.orderItems?.map((item, idx) => (
@@ -86,16 +86,16 @@ export default function AdminDashboard() {
                       <strong>{item.quantity}</strong> x {item.name} ({item.weight})
                     </div>
                   ))}
-                  <div style={{ marginTop: '15px', padding: '10px', background: '#f9f9f9', borderRadius: '4px', fontSize: '0.85rem' }}>
+                  <div className="mt-4 p-3 bg-gray-50 rounded text-sm">
                     <strong>Shipping Address:</strong><br/>
                     {order.shippingAddress?.street},<br/>
                     {order.shippingAddress?.city}, {order.shippingAddress?.state} - {order.shippingAddress?.pincode}
                   </div>
                 </div>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', justifyContent: 'center', borderLeft: '1px solid #eee', paddingLeft: '40px' }}>
+                <div className="flex flex-col gap-4 justify-center md:border-l md:border-gray-200 md:pl-10 pt-4 md:pt-0 border-t md:border-t-0 border-gray-200">
                   {order.orderStatus === 'Processing' && (
-                    <div style={{ display: 'flex', gap: '10px' }}>
+                    <div className="flex flex-col sm:flex-row gap-3">
                       <button 
                         onClick={() => setActiveTracking({ ...activeTracking, [order._id]: '' })}
                         style={{ flex: 1, padding: '12px', borderRadius: '8px', border: 'none', background: 'var(--color-primary)', color: 'white', fontWeight: 'bold', cursor: 'pointer' }}

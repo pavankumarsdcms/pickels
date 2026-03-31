@@ -67,21 +67,21 @@ export default function AdminLayout({ children }) {
   });
 
   return (
-    <div style={{ display: 'flex', minHeight: '100vh', background: '#fafafa' }}>
+    <div className="flex flex-col md:flex-row min-h-screen bg-[#fafafa]">
       {/* Sidebar */}
-      <aside style={{ width: '250px', background: '#2c3e50', color: 'white', padding: '30px 20px', position: 'fixed', height: '100vh' }}>
-        <h2 style={{ fontSize: '1.2rem', marginBottom: '40px', color: '#f39c12', fontWeight: 'bold' }}>🏺 Pickle Admin</h2>
-        <nav style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+      <aside className="w-full md:w-[250px] bg-[#2c3e50] text-white p-4 md:p-8 md:fixed h-auto md:h-screen z-40 overflow-y-auto shadow-lg">
+        <h2 className="text-xl mb-4 md:mb-10 text-[#f39c12] font-bold">🏺 Pickle Admin</h2>
+        <nav className="flex flex-row flex-wrap md:flex-col gap-2 md:gap-4">
           <button onClick={() => router.push('/admin')} style={getButtonStyle('/admin')}>Overview & Orders</button>
           <button onClick={() => router.push('/admin/revenue')} style={getButtonStyle('/admin/revenue')}>📈 Revenue & Analysis</button>
           <button onClick={() => router.push('/admin/products')} style={getButtonStyle('/admin/products')}>📦 Products</button>
           <button onClick={() => router.push('/admin/categories')} style={getButtonStyle('/admin/categories')}>📁 Categories</button>
-          <button onClick={logout} style={{ textAlign: 'left', background: 'none', border: 'none', color: '#e74c3c', fontSize: '1.1rem', cursor: 'pointer', padding: '10px', marginTop: '40px', opacity: 0.8 }}>Logout</button>
+          <button onClick={logout} style={{ textAlign: 'left', background: 'none', border: 'none', color: '#e74c3c', fontSize: '1.1rem', cursor: 'pointer', padding: '10px', marginTop: 'auto', opacity: 0.8 }}>Logout</button>
         </nav>
       </aside>
 
       {/* Main Content */}
-      <main style={{ flex: 1, padding: '40px', marginLeft: '250px' }}>
+      <main className="flex-1 w-full p-4 md:p-10 md:ml-[250px] overflow-x-hidden">
         {children}
       </main>
     </div>
