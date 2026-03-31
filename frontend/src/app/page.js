@@ -103,7 +103,7 @@ export default function Home() {
         </div>
         <div className="container">
           <h2 className="section-title" style={{ fontFamily: 'serif' }}>Our Bestselling Traditions</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '30px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '30px' }}>
 
             {loading ? (
               <div style={{ textAlign: 'center', gridColumn: '1 / -1', padding: '40px' }}>Loading best flavors...</div>
@@ -111,7 +111,7 @@ export default function Home() {
               products.map(product => (
                 <div key={product._id} className="product-card">
                   <div className="product-img-wrap">
-                    <Image src={product.image || '/images/32.png'} alt={product.name} fill sizes="(max-width: 768px) 100vw, 250px" style={{ objectFit: 'cover' }} className="product-img" />
+                    <img src={product.image || '/images/32.png'} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} className="product-img" />
                   </div>
                   <div className="product-info">
                     <span className="product-category">{product.category}</span>
