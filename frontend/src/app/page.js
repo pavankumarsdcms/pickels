@@ -150,7 +150,7 @@ export default function Home() {
             <div>
               <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '25px', fontFamily: 'var(--font-heading)', color: 'var(--color-primary)', fontSize: '2.5rem' }}>The Authentic Konaseema Way</h2>
               <p style={{ marginBottom: '30px', fontSize: '1.2rem', fontStyle: 'italic', color: '#555', lineHeight: '1.8' }}>
-                "In the lush landscapes of Konaseema, every pickle starts with a story—of the sun, the soil, and a secret recipe passed down through generations."
+                &quot;In the lush landscapes of Konaseema, every pickle starts with a story—of the sun, the soil, and a secret recipe passed down through generations.&quot;
               </p>
               <ul style={{ listStyle: 'none', padding: 0 }}>
                 <li style={{ marginBottom: '20px', display: 'flex', alignItems: 'flex-start', gap: '20px' }}>
@@ -252,7 +252,7 @@ export default function Home() {
             textShadow: '0 4px 15px rgba(0,0,0,1)',
             letterSpacing: '-0.5px'
           }}>
-            "The Godavari flows with grace, and our pickles carry the fire and tang of its banks. Experience a culinary heritage that spans centuries."
+            &quot;The Godavari flows with grace, and our pickles carry the fire and tang of its banks. Experience a culinary heritage that spans centuries.&quot;
           </p>
           <div style={{ width: '100px', height: '3px', background: 'var(--color-secondary)', margin: '0 auto 30px', boxShadow: '0 0 15px var(--color-secondary)' }}></div>
           <span style={{
@@ -277,7 +277,7 @@ export default function Home() {
             <div style={{ background: 'white', padding: '30px', borderRadius: '12px', boxShadow: 'var(--shadow-sm)', textAlign: 'center' }}>
               <div style={{ color: '#f39c12', fontSize: '1.5rem', marginBottom: '15px' }}>⭐⭐⭐⭐⭐</div>
               <p style={{ fontStyle: 'italic', marginBottom: '20px', color: '#555' }}>
-                "The Gongura pickle tastes exactly like how my grandmother used to make it. Absolute perfection!"
+                &quot;The Gongura pickle tastes exactly like how my grandmother used to make it. Absolute perfection!&quot;
               </p>
               <h4 style={{ color: 'var(--color-primary)' }}>- Ramesh K., Hyderabad</h4>
             </div>
@@ -285,7 +285,7 @@ export default function Home() {
             <div style={{ background: 'white', padding: '30px', borderRadius: '12px', boxShadow: 'var(--shadow-sm)', textAlign: 'center' }}>
               <div style={{ color: '#f39c12', fontSize: '1.5rem', marginBottom: '15px' }}>⭐⭐⭐⭐⭐</div>
               <p style={{ fontStyle: 'italic', marginBottom: '20px', color: '#555' }}>
-                "I ordered the Chicken pickle and it's simply out of this world. Right balance of spice and flavor."
+                &quot;I ordered the Chicken pickle and it&apos;s simply out of this world. Right balance of spice and flavor.&quot;
               </p>
               <h4 style={{ color: 'var(--color-primary)' }}>- Sneha M., Vizag</h4>
             </div>
@@ -293,7 +293,7 @@ export default function Home() {
             <div style={{ background: 'white', padding: '30px', borderRadius: '12px', boxShadow: 'var(--shadow-sm)', textAlign: 'center' }}>
               <div style={{ color: '#f39c12', fontSize: '1.5rem', marginBottom: '15px' }}>⭐⭐⭐⭐⭐</div>
               <p style={{ fontStyle: 'italic', marginBottom: '20px', color: '#555' }}>
-                "Their Avakaya is the highlight of my meals now. Packaged beautifully and delivered fresh."
+                &quot;Their Avakaya is the highlight of my meals now. Packaged beautifully and delivered fresh.&quot;
               </p>
               <h4 style={{ color: 'var(--color-primary)' }}>- Venkatesh D., Vijayawada</h4>
             </div>

@@ -29,7 +29,7 @@ export default function AboutPage() {
           </p>
 
           <p>
-            Whether it's the iconic Avakaya, the fiery Gongura, or our special Non-Veg selections, 
+            Whether it&apos;s the iconic Avakaya, the fiery Gongura, or our special Non-Veg selections, 
             we guarantee an authentic taste experience that will transport you straight to the Godavari riverbanks.
           </p>
         </div>

@@ -4,6 +4,28 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { CartContext } from '../../../store/CartContext';
 
+const weightOptions = [
+  { label: '250g', multiplier: 1 },
+  { label: '500g', multiplier: 1.9 },
+  { label: '1kg', multiplier: 3.5 },
+];
+
+const fallbackProducts = [
+  { _id: '1', name: 'Spicy Gongura Pickle', category: 'veg', price: 250, weight: '250g', image: '/images/32.png', description: 'Authentic Andhra style Gongura pickle made with fresh leaves, perfectly spiced.' },
+  { _id: '2', name: 'Traditional Avakaya', category: 'veg', price: 280, weight: '250g', image: '/images/20.png', description: 'The king of pickles. Sun-dried raw mangoes marinated in mustard powder and sesame oil.' },
+  { _id: '3', name: 'Godavari Chicken Pickle', category: 'non-veg', price: 450, weight: '250g', image: '/images/non-veg-pickle.png', description: 'Tender chicken pieces cooked in traditional spices to create an irresistible savory experience.' },
+  { _id: '4', name: 'Prawns Pickle Special', category: 'non-veg', price: 550, weight: '250g', image: '/images/36.png', description: 'Freshly caught coastal prawns pickled with a special blend of spices.' },
+  { _id: '5', name: 'Nuvvula Karam Podi', category: 'podis', price: 150, weight: '200g', image: '/images/nuvvula-karam.png', description: 'Roasted sesame seeds powder, perfect with hot rice and ghee.' },
+  { _id: '6', name: 'Bellam Avakaya (Sweet Mango)', category: 'veg', price: 300, weight: '250g', image: '/images/bellam-avakaya.png', description: 'A sweet and sour version of the classic mango pickle, made with jaggery.' },
+  { _id: '7', name: 'Garlic Avakaya', category: 'veg', price: 290, weight: '250g', image: '/images/33.png', description: 'A pungent and spicy variant of Avakaya with rich garlic cloves.' },
+  { _id: '8', name: 'Tomato Pickle', category: 'veg', price: 220, weight: '250g', image: '/images/34.png', description: 'Tangy and spicy tomato pickle made with sun-dried tomatoes.' },
+  { _id: '9', name: 'Ginger Pickle (Allam Pachadi)', category: 'veg', price: 240, weight: '250g', image: '/images/35.png', description: 'Perfect balance of sweet, spicy, and tangy ginger flavor.' },
+  { _id: '10', name: 'Nellore Fish Pickle', category: 'non-veg', price: 580, weight: '250g', image: '/images/36.png', description: 'Premium fish pieces marinated in traditional Nellore style spices.' },
+  { _id: '11', name: 'Mutton Pickle Special', category: 'non-veg', price: 750, weight: '250g', image: '/images/37.png', description: 'Juicy mutton pieces slow-cooked and pickled for a rich meaty burst.' },
+  { _id: '12', name: 'Idly Karappodi', category: 'podis', price: 160, weight: '200g', image: '/images/21.png', description: 'Classic companion for Idly and Dosa with high-quality lentils.' },
+  { _id: '13', name: 'Kandi Podi (Lentil Powder)', category: 'podis', price: 170, weight: '200g', image: '/images/23.png', description: 'Traditional roasted lentil powder, a staple in every Telugu household.' },
+];
+
 export default function ProductDetail({ params: paramsPromise }) {
   const params = use(paramsPromise);
   const { id } = params;
@@ -13,27 +35,6 @@ export default function ProductDetail({ params: paramsPromise }) {
   const [selectedWeight, setSelectedWeight] = useState('250g');
   const { addToCart } = useContext(CartContext);
 
-  const weightOptions = [
-    { label: '250g', multiplier: 1 },
-    { label: '500g', multiplier: 1.9 },
-    { label: '1kg', multiplier: 3.5 },
-  ];
-
-  const fallbackProducts = [
-    { _id: '1', name: 'Spicy Gongura Pickle', category: 'veg', price: 250, weight: '250g', image: '/images/32.png', description: 'Authentic Andhra style Gongura pickle made with fresh leaves, perfectly spiced.' },
-    { _id: '2', name: 'Traditional Avakaya', category: 'veg', price: 280, weight: '250g', image: '/images/20.png', description: 'The king of pickles. Sun-dried raw mangoes marinated in mustard powder and sesame oil.' },
-    { _id: '3', name: 'Godavari Chicken Pickle', category: 'non-veg', price: 450, weight: '250g', image: '/images/non-veg-pickle.png', description: 'Tender chicken pieces cooked in traditional spices to create an irresistible savory experience.' },
-    { _id: '4', name: 'Prawns Pickle Special', category: 'non-veg', price: 550, weight: '250g', image: '/images/36.png', description: 'Freshly caught coastal prawns pickled with a special blend of spices.' },
-    { _id: '5', name: 'Nuvvula Karam Podi', category: 'podis', price: 150, weight: '200g', image: '/images/nuvvula-karam.png', description: 'Roasted sesame seeds powder, perfect with hot rice and ghee.' },
-    { _id: '6', name: 'Bellam Avakaya (Sweet Mango)', category: 'veg', price: 300, weight: '250g', image: '/images/bellam-avakaya.png', description: 'A sweet and sour version of the classic mango pickle, made with jaggery.' },
-    { _id: '7', name: 'Garlic Avakaya', category: 'veg', price: 290, weight: '250g', image: '/images/33.png', description: 'A pungent and spicy variant of Avakaya with rich garlic cloves.' },
-    { _id: '8', name: 'Tomato Pickle', category: 'veg', price: 220, weight: '250g', image: '/images/34.png', description: 'Tangy and spicy tomato pickle made with sun-dried tomatoes.' },
-    { _id: '9', name: 'Ginger Pickle (Allam Pachadi)', category: 'veg', price: 240, weight: '250g', image: '/images/35.png', description: 'Perfect balance of sweet, spicy, and tangy ginger flavor.' },
-    { _id: '10', name: 'Nellore Fish Pickle', category: 'non-veg', price: 580, weight: '250g', image: '/images/36.png', description: 'Premium fish pieces marinated in traditional Nellore style spices.' },
-    { _id: '11', name: 'Mutton Pickle Special', category: 'non-veg', price: 750, weight: '250g', image: '/images/37.png', description: 'Juicy mutton pieces slow-cooked and pickled for a rich meaty burst.' },
-    { _id: '12', name: 'Idly Karappodi', category: 'podis', price: 160, weight: '200g', image: '/images/21.png', description: 'Classic companion for Idly and Dosa with high-quality lentils.' },
-    { _id: '13', name: 'Kandi Podi (Lentil Powder)', category: 'podis', price: 170, weight: '200g', image: '/images/23.png', description: 'Traditional roasted lentil powder, a staple in every Telugu household.' },
-  ];
 
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/products/${id}`)
@@ -132,22 +133,22 @@ export default function ProductDetail({ params: paramsPromise }) {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
             <div style={{ background: '#f9f9f9', padding: '20px', borderRadius: '8px' }}>
               <div style={{ color: '#f39c12', marginBottom: '10px' }}>⭐⭐⭐⭐⭐</div>
-              <h4 style={{ marginBottom: '5px' }}>"Absolutely Delicious!"</h4>
-              <p style={{ color: '#555', fontSize: '0.9rem', marginBottom: '10px' }}>"The authentic taste of this pickle reminds me of my grandmother's recipe. Will definitely buy again!"</p>
+              <h4 style={{ marginBottom: '5px' }}>&quot;Absolutely Delicious!&quot;</h4>
+              <p style={{ color: '#555', fontSize: '0.9rem', marginBottom: '10px' }}>&quot;The authentic taste of this pickle reminds me of my grandmother&apos;s recipe. Will definitely buy again!&quot;</p>
               <small style={{ color: '#888' }}>- Priya Reddy, Hyderabad</small>
             </div>
             
             <div style={{ background: '#f9f9f9', padding: '20px', borderRadius: '8px' }}>
               <div style={{ color: '#f39c12', marginBottom: '10px' }}>⭐⭐⭐⭐⭐</div>
-              <h4 style={{ marginBottom: '5px' }}>"Perfect Spice Level"</h4>
-              <p style={{ color: '#555', fontSize: '0.9rem', marginBottom: '10px' }}>"I've tried many brands, but Konaseema captures the exact traditional Godavari spice. Highly recommended."</p>
+              <h4 style={{ marginBottom: '5px' }}>&quot;Perfect Spice Level&quot;</h4>
+              <p style={{ color: '#555', fontSize: '0.9rem', marginBottom: '10px' }}>&quot;I&apos;ve tried many brands, but Konaseema captures the exact traditional Godavari spice. Highly recommended.&quot;</p>
               <small style={{ color: '#888' }}>- Karthik Sharma, Bangalore</small>
             </div>
 
             <div style={{ background: '#f9f9f9', padding: '20px', borderRadius: '8px' }}>
               <div style={{ color: '#f39c12', marginBottom: '10px' }}>⭐⭐⭐⭐⭐</div>
-              <h4 style={{ marginBottom: '5px' }}>"Great Packaging"</h4>
-              <p style={{ color: '#555', fontSize: '0.9rem', marginBottom: '10px' }}>"Arrived quickly and the jar was sealed perfectly. The oil wasn't leaking at all. Tastes amazing with hot rice."</p>
+              <h4 style={{ marginBottom: '5px' }}>&quot;Great Packaging&quot;</h4>
+              <p style={{ color: '#555', fontSize: '0.9rem', marginBottom: '10px' }}>&quot;Arrived quickly and the jar was sealed perfectly. The oil wasn&apos;t leaking at all. Tastes amazing with hot rice.&quot;</p>
               <small style={{ color: '#888' }}>- Swathi V., Chennai</small>
             </div>
           </div>

@@ -5,6 +5,22 @@ import Image from 'next/image';
 import { useContext } from 'react';
 import { CartContext } from '../../store/CartContext';
 
+const fallbackProducts = [
+  { _id: '1', name: 'Spicy Gongura Pickle', category: 'veg', price: 250, weight: '250g', image: '/images/32.png' },
+  { _id: '2', name: 'Traditional Avakaya', category: 'veg', price: 280, weight: '250g', image: '/images/20.png' },
+  { _id: '3', name: 'Godavari Chicken Pickle', category: 'non-veg', price: 450, weight: '250g', image: '/images/non-veg-pickle.png' },
+  { _id: '4', name: 'Prawns Pickle Special', category: 'non-veg', price: 550, weight: '250g', image: '/images/36.png' },
+  { _id: '5', name: 'Nuvvula Karam Podi', category: 'podis', price: 150, weight: '200g', image: '/images/nuvvula-karam.png' },
+  { _id: '6', name: 'Bellam Avakaya (Sweet Mango)', category: 'veg', price: 300, weight: '250g', image: '/images/bellam-avakaya.png' },
+  { _id: '7', name: 'Garlic Avakaya', category: 'veg', price: 290, weight: '250g', image: '/images/33.png' },
+  { _id: '8', name: 'Tomato Pickle', category: 'veg', price: 220, weight: '250g', image: '/images/34.png' },
+  { _id: '9', name: 'Ginger Pickle (Allam Pachadi)', category: 'veg', price: 240, weight: '250g', image: '/images/35.png' },
+  { _id: '10', name: 'Nellore Fish Pickle', category: 'non-veg', price: 580, weight: '250g', image: '/images/36.png' },
+  { _id: '11', name: 'Mutton Pickle Special', category: 'non-veg', price: 750, weight: '250g', image: '/images/37.png' },
+  { _id: '12', name: 'Idly Karappodi', category: 'podis', price: 160, weight: '200g', image: '/images/21.png' },
+  { _id: '13', name: 'Kandi Podi (Lentil Powder)', category: 'podis', price: 170, weight: '200g', image: '/images/23.png' },
+];
+
 export default function ShopPage() {
   const { addToCart } = useContext(CartContext);
   
@@ -18,22 +34,6 @@ export default function ShopPage() {
   const [filter, setFilter] = useState('all');
   const [categories, setCategories] = useState([]);
 
-  // Fallback demo data
-  const fallbackProducts = [
-    { _id: '1', name: 'Spicy Gongura Pickle', category: 'veg', price: 250, weight: '250g', image: '/images/32.png' },
-    { _id: '2', name: 'Traditional Avakaya', category: 'veg', price: 280, weight: '250g', image: '/images/20.png' },
-    { _id: '3', name: 'Godavari Chicken Pickle', category: 'non-veg', price: 450, weight: '250g', image: '/images/non-veg-pickle.png' },
-    { _id: '4', name: 'Prawns Pickle Special', category: 'non-veg', price: 550, weight: '250g', image: '/images/36.png' },
-    { _id: '5', name: 'Nuvvula Karam Podi', category: 'podis', price: 150, weight: '200g', image: '/images/nuvvula-karam.png' },
-    { _id: '6', name: 'Bellam Avakaya (Sweet Mango)', category: 'veg', price: 300, weight: '250g', image: '/images/bellam-avakaya.png' },
-    { _id: '7', name: 'Garlic Avakaya', category: 'veg', price: 290, weight: '250g', image: '/images/33.png' },
-    { _id: '8', name: 'Tomato Pickle', category: 'veg', price: 220, weight: '250g', image: '/images/34.png' },
-    { _id: '9', name: 'Ginger Pickle (Allam Pachadi)', category: 'veg', price: 240, weight: '250g', image: '/images/35.png' },
-    { _id: '10', name: 'Nellore Fish Pickle', category: 'non-veg', price: 580, weight: '250g', image: '/images/36.png' },
-    { _id: '11', name: 'Mutton Pickle Special', category: 'non-veg', price: 750, weight: '250g', image: '/images/37.png' },
-    { _id: '12', name: 'Idly Karappodi', category: 'podis', price: 160, weight: '200g', image: '/images/21.png' },
-    { _id: '13', name: 'Kandi Podi (Lentil Powder)', category: 'podis', price: 170, weight: '200g', image: '/images/23.png' },
-  ];
 
   useEffect(() => {
     // Fetch products

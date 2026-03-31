@@ -10,7 +10,7 @@ export default function CartPage() {
     return (
       <div style={{ padding: '100px 20px', textAlign: 'center', minHeight: '80vh' }}>
         <h1 style={{ marginBottom: '20px' }}>Your Cart is Empty</h1>
-        <p style={{ color: '#888', marginBottom: '30px' }}>Looks like you haven't added any authentic Konaseema pickles yet!</p>
+        <p style={{ color: '#888', marginBottom: '30px' }}>Looks like you haven&apos;t added any authentic Konaseema pickles yet!</p>
         <Link href="/shop" className="btn">Start Shopping</Link>
       </div>
     );
