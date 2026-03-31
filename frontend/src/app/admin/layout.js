@@ -69,7 +69,7 @@ export default function AdminLayout({ children }) {
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-[#fafafa]">
       {/* Sidebar */}
-      <aside className="w-full md:w-[250px] bg-[#2c3e50] text-white p-4 md:p-8 md:fixed h-auto md:h-screen z-40 overflow-y-auto shadow-lg">
+      <aside className="w-full md:w-[250px] shrink-0 bg-[#2c3e50] text-white p-4 md:p-8 md:sticky md:top-0 h-auto md:h-[100vh] z-40 overflow-y-auto shadow-lg">
         <h2 className="text-xl mb-4 md:mb-10 text-[#f39c12] font-bold">🏺 Pickle Admin</h2>
         <nav className="flex flex-row flex-wrap md:flex-col gap-2 md:gap-4">
           <button onClick={() => router.push('/admin')} style={getButtonStyle('/admin')}>Overview & Orders</button>
@@ -81,7 +81,7 @@ export default function AdminLayout({ children }) {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 w-full p-4 md:p-10 md:ml-[250px] overflow-x-hidden">
+      <main className="flex-1 w-full p-4 md:p-10 overflow-x-hidden">
         {children}
       </main>
     </div>
